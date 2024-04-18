@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "extra_config": {
+    "github_com/devopsfaith/krakend-cors": {
+      "allow_origins": ["*"],
+      "max_age": "12h"
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/api",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/backend-api",
+          "host": ["http://backend-service:8080"],
+          "encoding": "json"
+        }
+      ]
+    }
+  ]
+}
+

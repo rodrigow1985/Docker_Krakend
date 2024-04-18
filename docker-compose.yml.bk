@@ -1,0 +1,13 @@
+version: '3'
+services:
+  krakend:
+    image: devopsfaith/krakend:watch
+    container_name: mi-krakend
+    ports:
+      - "8080:8080"
+      - "1234:1234"
+      - "8090:8090"
+    volumes:
+      - ./config:/etc/krakend/
+    command: run -c /etc/krakend/krakend.json
+
